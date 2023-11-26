@@ -1,6 +1,4 @@
 
-import domain.EmployeeService;
-import domain.ServiceService;
 import entities.Employee;
 import entities.Service;
 import java.util.Date;
@@ -12,7 +10,7 @@ public class Test {
      */
     public static void main(String[] args) {
         
-        ServiceService seviceService = new ServiceService(null);
+        /*ServiceService seviceService = new ServiceService(null);
         EmployeeService employeService = new EmployeeService(null);
         
         Service service = new Service();
@@ -32,6 +30,6 @@ public class Test {
         employeService.create(employee);   
         
         System.out.println("Bien enregistrer");
-
+*/
     }
 }

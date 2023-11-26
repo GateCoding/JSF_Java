@@ -30,21 +30,21 @@ import org.hibernate.Session;
  */
 @ManagedBean
 @RequestScoped
-public class ServiceBean extends AbstractFacade<Employee> implements Serializable{
+public class ServiceBean extends AbstractFacade<Service> implements Serializable{
 
     private Service service;
     private List<Service> services;
-    
-    
-    public ServiceBean(Class<Employee> entityClass) {
-        super(entityClass);
+    //ServiceService seviceService;
+
+    public ServiceBean() {
         service =  new Service();
         services = new ArrayList<>();
+        //seviceService = new ServiceService(null);
     }
 
-    
     public void onCreationAction(){
         services.add(service);
+        //seviceService.create(service);
         service = new Service();
     }
     
@@ -63,7 +63,10 @@ public class ServiceBean extends AbstractFacade<Employee> implements Serializabl
     public void setServices(List<Service> services) {
         this.services = services;
     }
-    
-    
+
+    @Override
+    protected Class<Service> getEntityClass() {
+        return Service.class;
+    }    
     
 }
